@@ -1,0 +1,64 @@
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Splash Screen ----------------------------------*/
+body#splash-screen {
+	min-height: 100vh;
+	background-image: url(../img/bg-basic.jpg);
+	background-repeat: repeat-x;
+	background-position: fixed;
+	background-size: contain;
+}
+
+#splash-screen header {
+	padding: 6vh 0;
+}
+
+#splash-screen header .welcome {
+	min-height: 16vh;
+	background-image:url(../img/hello.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#splash-screen section {
+	padding: 6vh 0;
+	background-image:url(../img/white-bar.jpg);
+	background-position: center center;
+	background-repeat: repeat-x;
+	background-size: auto 8vh;
+}
+
+#splash-screen section .medal {
+	min-height: 24vh;
+	background-image:url(../img/maggiecare-badge.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#splash-screen footer {
+	min-height: 16vh;
+	padding: 6vh 0;
+}
+
+/* General CSS ------------------------------------- */
+.loading-section {
+	padding: 3vh 0;
+	position: relative;
+}
+.loading {
+	min-height: 18vh;
+	background-image:url(../img/circle-loading-animation.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+

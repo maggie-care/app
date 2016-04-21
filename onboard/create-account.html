@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<script src="/js/script.js"></script>
+<script src="/js/jquery-2.2.3.min.js"></script>
+</head>
+
+<body id="create-account" class="onboarding blue-bg">
+<header class="text-logo">
+	<div>
+    </div>
+</header>
+<section class="q-bar">
+	<div></div>
+</section>
+<section class="maggie">
+	<div>
+    </div>
+</section>
+<form id="create-account-form" class="blue-bg" action="api.maggie.care/account/create/index.php" method="post">
+	<input type="hidden" name="api_key" value="{TQ$4oYQhLb9Z20-1a0jG;kK8;=3DY" />
+	<div class="field">
+		<input class="single" type="text" name="name" value="" placeholder="E.G. Jane Smith" />
+	</div>
+	<div class="field">
+		<button class="single" type="submit" />Submit</button>
+	</div>
+</form>
+</section>
+<footer>
+</footer>
+<script>
+var page = {
+	
+	maggiecare:false,
+	
+	init: function( mcare ){
+		
+		page.maggiecare = mcare;
+		
+		jQuery('form').on( 'submit' , function(){ page.submit_form( event , jQuery( this ) ) } );
+		
+	}, // end init
+	
+	submit_form: function( e , form ){
+		
+		if (e.preventDefault) e.preventDefault();
+		
+		data = form.serialize();
+		
+		page.maggiecare.account.create_account( data );
+		
+	}
+	
+} // end page
+
+page.init( maggiecare );
+</script>
+</body>
+</html>

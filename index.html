@@ -4,6 +4,32 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <link rel="stylesheet" href="css/style.css" />
+<script src="js/script.js"></script>
+<script>
+var page = {
+	
+	maggiecare:false,
+	
+	init: function( mcare ){
+		
+		page.maggiecare = mcare;
+		
+		if ( page.maggiecare.account.get_acct() ){
+			
+			alert('account found');
+			
+		} else {
+			
+			window.location = '/onboard/create-account.html';
+			
+		} // end if
+		
+	} // end init
+	
+} // end page
+
+page.init( maggiecare );
+</script>
 </head>
 
 <body id="splash-screen">

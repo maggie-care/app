@@ -2,16 +2,241 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family:Verdana, Geneva, sans-serif;
 }
-
-/* Splash Screen ----------------------------------*/
-body#splash-screen {
+body.blue-bg {
 	min-height: 100vh;
 	background-image: url(../img/bg-basic.jpg);
 	background-repeat: repeat-x;
 	background-position: fixed;
 	background-size: contain;
 }
+
+
+
+form input.single {
+	height: 6vh;
+	line-height: 6vh;
+	font-size: 3vh;
+	text-align: center;
+}
+
+form .field {
+	padding: 1.5vh 0;
+}
+
+form button.single {
+	height: 7vh;
+	line-height: 7vh;
+	font-size: 4vh;
+	text-align: center;
+	padding: 0 2vh;
+	text-transform: uppercase;
+}
+
+/* Form Blue BG ---- */
+
+form.blue-bg input {
+	background-color: transparent;
+	outline: 0;
+	border: 4px solid #fff;
+	border-radius: 10px;
+	width: 70%;
+	margin: 0 15%;
+	color: #fff;
+}
+
+form.blue-bg input::-webkit-input-placeholder { color: #fff; }
+
+form.blue-bg button.single {
+	background-color: #ffffff;
+	border-radius: 2vh;
+	outline: 0;
+	border: 0;
+	color: #259dda;
+}
+
+
+/* General CSS ------------------------------------- */
+.loading-section {
+	padding: 3vh 0;
+	position: relative;
+}
+.loading {
+	min-height: 18vh;
+	background-image:url(../img/circle-loading-animation.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+/* Header ----------------*/
+header.text-logo {
+	padding: 6vh 0;
+}
+
+header.text-logo div {
+	min-height: 14vh;
+	background-image:url(../img/logo-text.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* Section q-bar ----------------*/	
+section.q-bar {
+	padding: 2vh 0;
+	background-color: #79a4d7;
+}
+
+section.q-bar > div {
+	height: 12vh;
+	line-height: 12vh;
+	font-size: 4vh;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+}
+/* Section maggie ----------------*/
+
+section.maggie {
+	padding: 4vh 0;
+}
+
+section.maggie > div{
+	height: 25vh;
+	background-image:url(../img/maggie.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* Primary Header ----------------*/
+header#primary .action {
+	padding: 3vh 0;
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+header#primary .logo {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 3vh 0;
+}
+
+header#primary .logo > div {
+	background-image: url(../img/logo-text-blue.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 12vh;
+}
+
+header#primary .action .settings-button{
+	display: block;
+	height: 8vh;
+	background-image: url(../img/settings-button.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+header#primary .action .note-button{
+	display: block;
+	height: 8vh;
+	background-image: url(../img/note-button.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/* Overlay ----------------*/
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+	
+}
+
+.overlay > section {
+	padding: 4vh 0;
+}
+
+.has-overlay > footer,
+.has-overlay > section,
+.has-overlay > header {
+	filter: blur(5px);
+	-webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+}
+
+/* Overlay hang on----------------*/
+#hang-on.overlay > section.notice > div {
+	height: 50vh;
+	background-image:url(../img/hang-on-notice.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#hang-on.overlay > a {
+	display: block;
+	height: 8vh;
+	background-image:url(../img/button-set-up-caregivers.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+/* Home Screen ----------------------------------*/
+
+#home section.q-bar {
+	background-color:#ddebf6;
+	padding: 2vh 0;
+}
+
+#home section.q-bar > div {
+	background-image:url(../img/text-how-can-i-help.png);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 5vh;
+}
+
+#home section.icons {
+	margin: 0 4vh;
+}
+
+#home section.icons .icon {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	padding: 2vh 0;
+}
+
+#home section.icons .icon a {
+	display: block;
+	height: 16vh;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+#home section.icons .icon a.inactive {
+	opacity: 0.3;
+}
+
+#home section.icons .icon a { background-image:url(../img/icon-house-help.png);}
+#home section.icons .icon a.house-help { background-image:url(../img/icon-house-help.png); }
+#home section.icons .icon a.errand { background-image:url(../img/icon-errand.png);}
+#home section.icons .icon a.repair { background-image:url(../img/icon-repair.png);}
+#home section.icons .icon a.ride { background-image:url(../img/icon-ride.png);}
+
+
+/* Splash Screen ----------------------------------*/
 
 #splash-screen header {
 	padding: 6vh 0;
@@ -46,19 +271,14 @@ body#splash-screen {
 	padding: 6vh 0;
 }
 
-/* General CSS ------------------------------------- */
-.loading-section {
-	padding: 3vh 0;
-	position: relative;
-}
-.loading {
-	min-height: 18vh;
-	background-image:url(../img/circle-loading-animation.gif);
+/* Create Account Screen ----------------------------------*/
+#create-account section.q-bar > div {
+	background-image:url(../img/text-whats-your-name.png);
 	background-size: contain;
-	background-repeat: no-repeat;
 	background-position: center center;
-	position: absolute;
-	width: 100%;
-	height: 100%;
+	background-repeat: no-repeat;
 }
 
+#create-account form {
+	text-align: center;
+}

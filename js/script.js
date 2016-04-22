@@ -63,9 +63,25 @@ var maggiecare = {
 			
 			window.location = '/onboard/create-account.html';
 			
-		}
+		}, // end clear
 		
-	} // end account
+	}, // end account
+	
+	users: {
+			
+		set_temp_user: function( data ){
+			
+			window.localStorage.setItem( 'temp_user' , data );
+			
+		}, // end temp_user
+		
+		get_temp_user: function(){
+			
+			return window.localStorage.getItem( 'temp_user' );
+			
+		} // end temp_user
+		
+	} // end users
 	
 } // end maggiecare
 
@@ -82,5 +98,11 @@ var page = {
 	} // end overlay
 	
 } // end page
+
+var user = function(){
+	
+	
+	
+}
 
 

@@ -46,7 +46,7 @@ form.blue-bg input {
 	color: #fff;
 }
 
-form.blue-bg input::-webkit-input-placeholder { color: #fff; }
+form.blue-bg input::-webkit-input-placeholder { color: #fff; text-transform: uppercase; }
 
 form.blue-bg button.single {
 	background-color: #ffffff;
@@ -136,6 +136,10 @@ header#primary .logo > div {
 	height: 12vh;
 }
 
+header#primary .logo.white > div {
+	background-image: url(../img/logo-text-white.png);
+}
+
 header#primary .action .settings-button{
 	display: block;
 	height: 8vh;
@@ -163,6 +167,10 @@ header#primary .action .back-button{
 	background-position: center center;
 }
 
+header#primary .action .back-button.white{
+	background-image: url(../img/back-button-white.png);
+}
+
 /* Overlay ----------------*/
 .overlay {
 	position: fixed;
@@ -170,7 +178,9 @@ header#primary .action .back-button{
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
 	z-index: 100;
-	
+	color: #2e8ac9;
+	text-transform: uppercase;
+	font-size: 1.2rem;
 }
 
 .overlay.light {
@@ -186,6 +196,61 @@ header#primary .action .back-button{
 .has-overlay > header {
 	filter: blur(5px);
 	-webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+}
+
+.overlay .wordmark.sent {
+	padding: 3vh 0;
+}
+
+.overlay .wordmark.sent:after {
+	content: '';
+	display: block;
+	background-image:url(../img/wordmark-sent.png);
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 16vh;
+}
+
+.overlay .button-ok {
+	background-image:url(../img/button-ok.png);
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	bottom: 6vh;
+	left: 0;
+	width: 100%;
+	height: 8vh;
+	text-align: center
+}
+
+/* Overlay Single Circle----------------*/
+
+.overlay.single-circle {
+	padding: 20vh 0 0;
+	text-align: center;
+}
+
+.overlay.single-circle > div {
+	background-image:url(../img/note-circle.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 50vh;
+	min-height: 50vh;
+	position: relative;
+	margin: 0 auto;
+	
+}
+
+.overlay.single-circle > div > img {
+	display: block;
+	width: 100%;
+}
+
+.overlay.single-circle .text {
+	margin: 0 6vw; 
 }
 
 /* Overlay hang on----------------*/
@@ -320,6 +385,90 @@ header#primary .action .back-button{
 	background-size: contain;
 	background-position: right center;
 	background-repeat: no-repeat;
+}
+
+/* Add Caregiver Screen ----------------------------------*/
+
+#add-caregiver {
+	position: relative;
+}
+
+#add-caregiver header#primary .action a.settings-button {
+	display: none;
+}
+
+#add-caregiver section.q-bar div {
+	background-image: url(../img/text-add-family-and-friends.png);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#add-caregiver form {
+	padding: 8vh 0;
+}
+
+#add-caregiver form input {
+	width: 80%;
+	margin: 0 10%; 
+}
+
+#add-caregiver form .submit-button {
+	padding: 8vh 0 0;
+	text-align: center;
+}
+#add-caregiver form .submit-button button {
+	min-width: 40%;
+}
+
+#add-caregiver footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1vh 0;
+}
+
+
+#add-caregiver footer div {
+	min-height: 8vh;
+	background-image: url(../img/text-maggie-wont-share.png);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* Primary Caregiver Screen ----------------------------------*/
+
+#primary-caregiver header#primary .action a {
+	display: none;
+}
+
+#primary-caregiver section.q-bar div {
+	background-image:url(../img/text-is-primary-caregiver.png);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#primary-caregiver section.options {
+	text-align: center;
+	padding: 16vh 0;
+}
+
+#primary-caregiver section.options a {
+	display: inline-block;
+	vertical-align: top;
+	height: 25vh;
+	min-width: 40%;
+	background-image:url(../img/button-yes.png);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#primary-caregiver section.options a.no {
+	background-image:url(../img/button-no.png);
 }
 
 /* Splash Screen ----------------------------------*/

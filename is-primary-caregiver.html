@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<script src="/js/script.js"></script>
+<script src="/js/jquery-2.2.3.min.js"></script>
+</head>
+
+<body id="primary-caregiver" class="blue-bg">
+<div id="invite-sent" class="overlay light single-circle" style="display:none">
+	<div>
+    	<div class="wordmark sent">
+        </div>
+        <div class="text">
+        	Maggie will let you know when <span class="name">Danial</span> accepts the invite!
+        </div>
+        <a class="button-ok">
+        </a>
+    </div>
+</div>
+<header id="primary">
+	<div class="action">
+    	<a href="/settings.html" class="back-button white">
+        </a>
+    </div><div class="logo white">
+    	<div>
+        </div>
+    </div><div class="action">
+    	<a href="/settings.html" class="settings-button">
+        </a>
+    </div>
+</header>
+<section class="q-bar">
+	<div></div>
+</section>
+<section class="options">
+	<a href="#" class="yes"></a>
+    <a href="#" class="no"></a>
+</section>
+</section>
+<footer>
+	<div>
+    </div>
+</footer>
+<script>
+var after_page = {
+	
+	init: function( ){
+		
+		jQuery('section.options a').on( 'click', function(){ after_page.submit_form( event , jQuery( this ) ) } );
+		
+	}, // end init
+	
+	submit_form: function( e , form ){
+		
+		if (e.preventDefault) e.preventDefault();
+		
+		var role = 'role_id=4';
+		
+		if ( form.hasClass('yes') ){
+			
+			role = 'role_id=2';
+			
+		} // end if
+		
+		var data = maggiecare.users.get_temp_user();
+		
+		data += '&' + role;
+		
+		alert( data );
+		
+		//window.location = '/is-primary-caregiver.html';
+		
+	}, // end submit_form
+	
+} // end page
+
+after_page.init();
+</script>
+</body>
+</html>

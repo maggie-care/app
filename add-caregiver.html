@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<script src="/js/script.js"></script>
+<script src="/js/jquery-2.2.3.min.js"></script>
+</head>
+
+<body id="add-caregiver" class="onboarding blue-bg">
+<header id="primary">
+	<div class="action">
+    	<a href="/settings.html" class="back-button white">
+        </a>
+    </div><div class="logo white">
+    	<div>
+        </div>
+    </div><div class="action">
+    	<a href="/settings.html" class="settings-button">
+        </a>
+    </div>
+</header>
+<section class="q-bar">
+	<div></div>
+</section>
+<form id="create-account-form" class="blue-bg" action="api.maggie.care/account/create/index.php" method="get">
+	<input type="hidden" name="access_key" value="{TQ$4oYQhLb9Z20-1a0jG;kK8;=3DY" />
+    <input type="hidden" name="acct_id" value="00" />
+	<div class="field">
+		<input class="single" type="text" name="name" value="" placeholder="Caretaker Name" />
+	</div>
+    <div class="field">
+		<input class="single" type="text" name="phone" value="" placeholder="Mobile Number" />
+	</div>
+	<div class="field submit-button">
+		<button class="single" type="submit" />Submit</button>
+	</div>
+</form>
+</section>
+<footer>
+	<div>
+    </div>
+</footer>
+<script>
+var after_page = {
+	
+	init: function( ){
+		
+		jQuery('form').on( 'submit' , function(){ after_page.submit_form( event , jQuery( this ) ) } );
+		
+	}, // end init
+	
+	submit_form: function( e , form ){
+		
+		if (e.preventDefault) e.preventDefault();
+		
+		data = form.serialize();
+		
+		maggiecare.users.set_temp_user( data );
+		
+		window.location = '/is-primary-caregiver.html';
+		
+	}, // end submit_form
+	
+} // end page
+
+after_page.init();
+</script>
+</body>
+</html>

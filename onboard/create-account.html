@@ -20,8 +20,8 @@
 	<div>
     </div>
 </section>
-<form id="create-account-form" class="blue-bg" action="api.maggie.care/account/create/index.php" method="post">
-	<input type="hidden" name="api_key" value="{TQ$4oYQhLb9Z20-1a0jG;kK8;=3DY" />
+<form id="create-account-form" class="blue-bg" action="api.maggie.care/account/create/index.php" method="get">
+	<input type="hidden" name="access_key" value="{TQ$4oYQhLb9Z20-1a0jG;kK8;=3DY" />
 	<div class="field">
 		<input class="single" type="text" name="name" value="" placeholder="E.G. Jane Smith" />
 	</div>
@@ -33,15 +33,11 @@
 <footer>
 </footer>
 <script>
-var page = {
+var after_page = {
 	
-	maggiecare:false,
-	
-	init: function( mcare ){
+	init: function( ){
 		
-		page.maggiecare = mcare;
-		
-		jQuery('form').on( 'submit' , function(){ page.submit_form( event , jQuery( this ) ) } );
+		jQuery('form').on( 'submit' , function(){ after_page.submit_form( event , jQuery( this ) ) } );
 		
 	}, // end init
 	
@@ -51,13 +47,13 @@ var page = {
 		
 		data = form.serialize();
 		
-		page.maggiecare.account.create_account( data );
+		maggiecare.account.create_account( data , '/' );
 		
-	}
+	}, // end submit_form
 	
 } // end page
 
-page.init( maggiecare );
+after_page.init();
 </script>
 </body>
 </html>

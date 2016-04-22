@@ -153,6 +153,16 @@ header#primary .action .note-button{
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+
+header#primary .action .back-button{
+	display: block;
+	height: 8vh;
+	background-image: url(../img/back-button.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 /* Overlay ----------------*/
 .overlay {
 	position: fixed;
@@ -161,6 +171,10 @@ header#primary .action .note-button{
 	background-color: rgba(0,0,0,0.5);
 	z-index: 100;
 	
+}
+
+.overlay.light {
+	background-color: rgba(255,255,255,0.7);
 }
 
 .overlay > section {
@@ -187,6 +201,14 @@ header#primary .action .note-button{
 	height: 8vh;
 	background-image:url(../img/button-set-up-caregivers.png);
 	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* Loading Overlay ----------------*/
+#loading-overlay {
+	background-image:url(../img/loading-circle.gif);
+	background-size: 25% auto;
 	background-repeat: no-repeat;
 	background-position: center center;
 }
@@ -235,6 +257,70 @@ header#primary .action .note-button{
 #home section.icons .icon a.repair { background-image:url(../img/icon-repair.png);}
 #home section.icons .icon a.ride { background-image:url(../img/icon-ride.png);}
 
+/* Settings Screen ----------------------------------*/
+#settings header#primary .action .settings-button {
+	display: none;
+}
+
+#settings .options a {
+	text-decoration: none;
+	color: #0e75ba;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+#settings .options > ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: 4px solid #97c2e2;
+}
+
+#settings .options > ul > li {
+	padding: 0;
+	margin: 0;
+}
+
+#settings .options > ul > li > a {
+	display: block;
+	padding: 1rem 2rem;
+	border-top: 4px solid #97c2e2;
+}
+
+#settings .options > ul > li > ul {
+	border-top: 4px solid #97c2e2;
+	list-style-type: none;
+	
+}
+
+#settings .options > ul > li > ul > li:before{
+	display: block;
+	content: "• ";
+    color: #0e75ba;
+	float: left;
+	padding: 0.9rem 0;
+}
+
+#settings .options > ul > li > ul > li > a{
+	display: block;
+	padding: 1rem 1rem;
+	font-size: 0.8rem;
+}
+
+#settings a.add-button {
+	background-image:url(../img/add-button.png);
+	background-size: contain;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+#settings a.arrow-button {
+	background-image:url(../img/arrow-button.png);
+	background-size: contain;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
 
 /* Splash Screen ----------------------------------*/
 

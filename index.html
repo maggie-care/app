@@ -3,49 +3,81 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="../css/style.css"/>
+<script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/script.js"></script>
+</head>
+
+<body id="home" class="has-overlay">
+<!--<div id="hang-on" class="overlay">
+	<section class="notice">
+    	<div>
+        </div>
+    </section>
+    <a href="#" class="button set-caregivers"></a>
+</div> -->
+<div id="loading-overlay" class="overlay light">
+	<div>
+    </div>
+</div>
+<header id="primary">
+	<div class="action">
+    	<a href="#" class="note-button">
+        </a>
+    </div><div class="logo">
+    	<div>
+        </div>
+    </div><div class="action">
+    	<a href="/settings.html" class="settings-button">
+        </a>
+    </div>
+</header>
+<section class="q-bar">
+	<div></div>
+</section>
+<section class="icons">
+	<div class="icon">
+    	<a href="" class="house-help inactive"></a>
+    </div><div class="icon">
+    	<a href="" class="errand inactive"></a>
+    </div><div class="icon">
+    	<a href="" class="repair inactive"></a>
+    </div><div class="icon">
+    	<a href="" class="ride"></a>
+    </div><div class="icon">
+    	<a href="" class="inactive"></a>
+    </div><div class="icon">
+    	<a href="" class="inactive"></a>
+    </div>
+</section>
+<form class="blue-bg">
+</form>
+</section>
+<footer>
+</footer>
 <script>
-var page = {
+
+maggiecare.init();
+
+var after_page = {
 	
-	maggiecare:false,
-	
-	init: function( mcare ){
+	init:function(){
 		
-		page.maggiecare = mcare;
-		
-		if ( page.maggiecare.account.get_acct() ){
-			
-			alert('account found');
-			
-		} else {
+		if( maggiecare.account.acct == false ){
 			
 			window.location = '/onboard/create-account.html';
 			
-		} // end if
+		} else {
+			
+			page.overlay.hide();
+			
+		}// end if
 		
-	} // end init
+	}, // end init
 	
-} // end page
-
-page.init( maggiecare );
+}
+after_page.init();
 </script>
-</head>
-
-<body id="splash-screen">
-<header>
-	<div class="welcome">
-    </div>
-</header>
-<section>
-	<div class="medal">
-    </div>
-</section>
-<footer>
-	<div class="loading-section">
-    	<div class="loading">
-        </div>
-    </div>
-</footer>
 </body>
 </html>
+

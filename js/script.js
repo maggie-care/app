@@ -2,7 +2,7 @@ var maggiecare = {
 	
 	init: function(){
 		
-		maggiecare.account.set_account();
+		maggiecare.account.the_account();
 		
 	},
 		
@@ -10,79 +10,77 @@ var maggiecare = {
 		
 		acct: false,
 		
-		get_acct: function(){ return maggiecare.account.acct; },
-		
-		set_account: function(){
+		the_account: function(){
 			
-			local_acct = window.localStorage.getItem('account');
+			var local_account = window.localStorage.getItem('account');
 			
-			if ( local_acct === null || local_acct.length === 0 ){
+			if ( local_account === null || local_account.length === 0 ){
 				
 				return false;
 				
 			} else {
 				
-				return local_acct;
+				 maggiecare.account.acct = JSON.parse( local_account );
 				
 			} // end if
 			
+		},
+		
+		set_local_account: function( acct ){
+			
+			window.localStorage.setItem( 'account' , JSON.stringify( acct ) );
+			
+			maggiecare.account.the_account();
+			
 		}, // end set_account
 		
-		create_account: function( data ){
+		create_account: function( data , redirect ){
 			
-			var url = 'http://api.maggie.care/account/create/index.php';
+			var url = 'http://sms.maggie.care/api/account/create.php';
 			
-			jQuery.post(
+			jQuery.get(
 				url,
 				data,
 				function(response){
-					alert(response);
-				}
+					
+					maggiecare.account.set_local_account( response['settings'] );
+					
+					if ( redirect ){
+						
+						window.location = redirect;
+						
+					} // end if
+					
+				},
+				'json'
 			)
+			
+		}, // end create_account
+		
+		clear: function(){
+			
+			localStorage.clear();
+			
+			window.location = '/onboard/create-account.html';
 			
 		}
 		
 	} // end account
 	
 } // end maggiecare
-maggiecare.init();
 
-
-
-
-
-
-
-
-
-/*var mcare = function(){
+var page = {
 	
-	var self = this;
+	overlay: {
+		
+		hide: function(){
+			
+			jQuery('.overlay').delay(500).fadeOut( 500 , function(){ jQuery('body').removeClass('has-overlay'); })
+			
+		}, // end hide
+		
+	} // end overlay
 	
-	this.account = function(){
-		
-		this.get_account = function(){
-			
-			var acct = window.localStorage.getItem('account');
-			
-			if ( acct === null || acct.length === 0 ){
-				
-				return false;
-				
-			} else {
-				
-				return acct;
-				
-			} // end if
-			
-		}
-		
-	}	
-}
-var maggiecare = new mcare();
+} // end page
 
-var mcare_splash = function(){
-}
-
-var */
 
